@@ -34,6 +34,14 @@
         }
       }
     },
+    "migrate": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "ts-node --project tsconfig.app.json src/scripts/run-migration.ts",
+        "cwd": "apps/backend"
+      }
+    },
     "test": {
       "options": {
         "passWithNoTests": true
